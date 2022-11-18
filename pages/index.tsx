@@ -4,6 +4,7 @@ import { modalState } from "../atoms/modalAtoms";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
+import Plans from "../components/Plans";
 import Row from "../components/Row";
 import useAuth from "../hooks/useAuth";
 import { Movie } from "../typings";
@@ -33,8 +34,13 @@ const Home = ({
   const { loading } = useAuth();
   const showModal = useRecoilValue(modalState);
   if (loading) return null;
+
   return (
-    <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
+    <div
+      className={`${
+        showModal && "h-screen overflow-hidden"
+      } lg:h-[140vh]" relative h-screen bg-gradient-to-b`}
+    >
       <Head>
         <title>Home - Movieflix</title>
         <link rel="icon" href="/favicon.ico" />
@@ -46,6 +52,7 @@ const Home = ({
           <Row title="Trending Now" movies={trendingNow} />
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Thrillers" movies={actionMovies} />
+
           <Row title="Comedies" movies={comedyMovies} />
           <Row title="Scary Movies" movies={horrorMovies} />
           <Row title="Romance Movies" movies={romanceMovies} />

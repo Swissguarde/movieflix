@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { HiSearch, HiBell } from "react-icons/hi";
 import useAuth from "../hooks/useAuth";
+import BasicMenu from "./BasicMenu";
 const Header = () => {
   const [scroll, setScroll] = useState(false);
   const { logout } = useAuth();
@@ -22,12 +23,16 @@ const Header = () => {
   return (
     <header className={`${scroll && "bg-[#141414]"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
-        <img
-          src="https://rb.gy/ulxxee"
-          width={100}
-          height={100}
-          className="cursor-pointer object-contain"
-        />
+        <Link href="/">
+          <img
+            src="https://rb.gy/ulxxee"
+            width={100}
+            height={100}
+            className="cursor-pointer object-contain"
+          />
+        </Link>
+
+        <BasicMenu />
         <ul className="hidden space-x-4 md:flex">
           <li className="headerLink">Home</li>
           <li className="headerLink">Tv Shows</li>

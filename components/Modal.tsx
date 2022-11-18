@@ -76,8 +76,8 @@ const Modal = () => {
           />
           <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
             <div className="flex space-x-2">
-              <button className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
-                <FaPlay className="h-7 w-7 text-black" />
+              <button className="flex items-center gap-x-2 rounded bg-white px-4 text-xl font-bold text-black transition hover:bg-[#e6e6e6] md:px-8">
+                <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />
                 Play
               </button>
 
